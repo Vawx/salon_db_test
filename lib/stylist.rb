@@ -1,4 +1,4 @@
-require 'salon'
+require './lib/salon'
 
 class Stylist
   attr_reader( :name, :id )

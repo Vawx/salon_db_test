@@ -1,4 +1,4 @@
-require 'salon'
+require './lib/salon'
 
 class Client
   attr_reader( :name, :stylist, :id )
@@ -16,8 +16,8 @@ class Client
     return DBSalon.get_all_specific_from_column( "clients", "stylist", '' )
   end
 
-  define_singleton_method(:change_stylist) do |new_stylist_name, id|
-    DBSalon.update_specific_from_column("clients", "stylists", new_stylist_name, "id", id.to_i)
+  define_singleton_method(:change_stylist) do |stylist_id, id|
+    DBSalon.update_specific_from_column("clients", "stylists", stylist_id, "id", id.to_i)
   end
 
   define_singleton_method(:rename) do |new_name, id|
