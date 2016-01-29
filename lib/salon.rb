@@ -28,10 +28,10 @@ class Salon
   # Get specific value from column
   define_singleton_method(:get_specific_from_column) do |column_name, search_name, column_value|
     found = DBSALON.exec("SELECT * FROM #{column_name} WHERE #{search_name} = '#{column_value}';")
-    if column_name == "stylist"
+    if column_name == "stylists"
       return Stylist.new( {name: fetch_first(found, "name"), id: fetch_first(found, "id") } )
-    elsif column_name == "client"
-      return Client.new( {name: fetch_first( found, "name"), stylist: fetch_first(found, "stylist"), id: fetch_first(found, "id") } )
+    elsif column_name == "clients"
+      return Client.new( {name: fetch_first( found, "name"), stylist_id: fetch_first(found, "stylist_id"), id: fetch_first(found, "id") } )
     end
   end
 
@@ -39,12 +39,12 @@ class Salon
     found = DBSALON.exec("SELECT * FROM #{column_name} WHERE #{search_name} = '#{column_value}';")
     found_list = []
     found.each do |specific|
-      if column_name == "stylist"
+      if column_name == "stylists"
         found_list.push( Stylist.new( {name: specific.fetch("name"),
                                        id: specific.fetch("id")} ) )
-      elsif column_name == "client"
+      elsif column_name == "clients"
         found_list.push( Client.new( {name: specific.fetch("name"),
-                                      stylist: specific.fetch("stylist"),
+                                      stylist_id: specific.fetch("stylist"),
                                       id: specific.fetch("id")} ) )
       end
     end
@@ -56,10 +56,10 @@ class Salon
     found = DBSALON.exec("SELECT * FROM #{column_name};")
     found_list = []
     found.each do |each|
-      if column_name == "stylist"
+      if column_name == "stylists"
         found_list.push( Stylist.new( {name: each.fetch("name"), id: each.fetch("id")} ) )
-      elsif column_name == "client"
-        found_list.push( Client.new( {name: each.fetch("name"), stylist: each.fetch("stylist"), id: each.fetch("id")} ) )
+      elsif column_name == "clients"
+        found_list.push( Client.new( {name: each.fetch("name"), stylist_id: each.fetch("stylist_id"), id: each.fetch("id")} ) )
       end
     end
     return found_list

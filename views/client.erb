@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1><%=@client.name%></h1>
+    <div class="well">
+      <h4>Stylist: <% if @client.stylist != nil %> <%=@client.stylist%> <%else%> "None" <%end%></h4>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="continer" style="text-align:center;">
+      <form class="" action="/delete_client/<%=@client.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
