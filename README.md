@@ -12,7 +12,7 @@ A mock user website that allows the user to:
 
 ## Use
 
-1. clone ``
+1. clone `https://github.com/Vawx/salon_db_test`
 2. terminal `bundle install`
 3. terminal `CREATE DATABASE salon;`
 4. terminal `\c salon`
