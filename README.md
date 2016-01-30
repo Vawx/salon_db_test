@@ -18,12 +18,12 @@ A mock user website that allows the user to:
 4. terminal `\c salon`
 5. terminal `CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);`
 6. terminal `CREATE TABLE stylists ( id serial PRIMARY KEY, name varchar);`
-7. terminal  `CREATE DATABASE salon_test WITH TEMPLATE salon;`
+7. terminal `CREATE DATABASE salon_test WITH TEMPLATE salon;`
 8. terminal `ruby app.rb`
 9. browser `localhost:4567`
 
 ## Test
-Follow above then, terminal `rspec`
+Follow above through step 7 then: terminal `rspec`
 
 ## License
 The MIT License (MIT)
