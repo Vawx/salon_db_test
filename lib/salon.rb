@@ -44,7 +44,7 @@ class Salon
                                        id: specific.fetch("id")} ) )
       elsif column_name == "clients"
         found_list.push( Client.new( {name: specific.fetch("name"),
-                                      stylist_id: specific.fetch("stylist"),
+                                      stylist_id: specific.fetch("stylist_id"),
                                       id: specific.fetch("id")} ) )
       end
     end

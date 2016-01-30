@@ -1,7 +1,7 @@
 require './lib/salon'
 
 class Client
-  attr_reader( :name, :stylist, :id )
+  attr_reader( :name, :stylist_id, :id )
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
     @stylist_id = attributes.fetch(:stylist_id)
@@ -17,7 +17,7 @@ class Client
   end
 
   define_singleton_method(:change_stylist) do |stylist_id, id|
-    Salon.update_specific_from_column("clients", "stylists", stylist_id, "id", id.to_i)
+    Salon.update_specific_from_column("clients", "stylist_id", stylist_id, "id", id.to_i)
   end
 
   define_singleton_method(:rename) do |new_name, id|

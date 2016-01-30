@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1><%=@stylist.name%></h1>
+    <div class="well">
+      <div class="">
+        <label for="">All Clients</label>
+        <ul>
+        <% @clients.each do |client| %>
+          <div class="">
+            <form class="" action="/add_client_to_stylist/<%=client.id%>/<%=@stylist.id%>" method="post">
+              <input type="hidden" name="_method" value="patch">
+              <li><a href="/client/<%=client.id%>"> <b style="font-size:16px;"><%=client.name%></b></a>
+              <button type="submit" class="btn btn-info" name="button">Add Client</button></li>
+            </form>
+          </div>
+        <%end%>
+        </ul>
+      </div>
+      <div class="">
+        <label for="">Your clients</label>
+        <ul>
+          <% @stylist_clients.each do |s_client| %>
+            <li><%=s_client.name%></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="continer" style="text-align:center;">
+      <form class="" action="/delete_stylist/<%=@stylist.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
