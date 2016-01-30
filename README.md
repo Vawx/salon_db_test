@@ -1,28 +1,31 @@
 # Hair Salon
 
+## By
+Kyle Langley
+
 ## Description
-Mock website that allows functionality for a general hair salon business.
+A mock user website that allows the user to:
+
+1. View, add, update, and delete Stylists.
+2. View, add, update, and delete Clients.
+3. Add Clients to Stylists.
 
 ## Use
 
-clone `https://github.com/Vawx/hair_salon_db_test`
+1. clone ``
+2. terminal `bundle install`
+3. terminal `CREATE DATABASE salon;`
+4. terminal `\c salon`
+5. terminal `CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);`
+6. terminal `CREATE TABLE stylists ( id serial PRIMARY KEY, name varchar);`
+7. terminal  `CREATE DATABASE salon_test WITH TEMPLATE salon;`
 
-terminal `bundle install`
-
-how to install postgres `https://www.learnhowtoprogram.com/ruby/ruby-database-basics/installing-postgres-7fb0cff7-a0f5-4b61-a0db-8a928b9f67ef`
-
-`CREATE DATABASE salon;`
-
-`\c salon`
-
-`CREATE TABLE client (id serial PRIMARY KEY, name varchar, stylist_id int);`
-
-`CREATE TABLE stylist (id serial PRIMARY KEY, name varchar );`
-
-`CREATE DATABASE salon_test WITH TEMPLATE salon;`
+## Test
+Follow above then, terminal `rspec`
 
 ## License
-Copyright (c) <2016> Kyle Langley - Epicodus
+The MIT License (MIT)
+Copyright (c) <2016> <Kyle Langley / Epicodus>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
